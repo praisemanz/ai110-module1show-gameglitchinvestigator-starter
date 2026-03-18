@@ -26,12 +26,20 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+- The game is a Streamlit number-guessing game where you pick a difficulty, then try to guess a secret number within a limited number of attempts.
+
 - [ ] Detail which bugs you found.
+- Bugs found: reversed hint text (too high/too low), difficulty range not applied (UI + New Game), off-by-one attempt counting, New Game not resetting after win/loss, secret shown in debug, out-of-range guesses accepted, score could go negative.
 - [ ] Explain what fixes you applied.
 
+- Fixes applied: refactored core logic into `logic_utils.py`, corrected hint messages, enforced input range validation, fixed attempt counting/display, made New Game reset all session state (status/history/score/input/secret) using the correct difficulty range, removed secret from debug, clamped score to non-negative, and updated/added pytest regression tests.
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
+## 📸 Demo
+
+![Fixed winning game](game result.png)
+![Pytest Result](pytest result.png)
 
 ## 🚀 Stretch Features
 
